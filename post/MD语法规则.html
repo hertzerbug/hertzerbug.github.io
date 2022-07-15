@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":"ture","pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="#一、目录 @[TOC](文章标题名) 一级目录 #+空格 二级目录 ##+空格 三级目录 ###+空格 ......  标题Setext方式三个或更多 大标题 &#x3D;&#x3D;&#x3D; 小标题 ---  标题：Atx方式# 一级标题 ## 二级标题 ### 三级标题 #### 四级标题 ##### 五级标题 ###### 六级标题  #二、段落缩进 半个字符大的空白&amp;ensp;或&amp;#8194;看，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MD语法规则">
+<meta property="og:url" content="http://example.com/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#一、目录 @[TOC](文章标题名) 一级目录 #+空格 二级目录 ##+空格 三级目录 ###+空格 ......  标题Setext方式三个或更多 大标题 &#x3D;&#x3D;&#x3D; 小标题 ---  标题：Atx方式# 一级标题 ## 二级标题 ### 三级标题 #### 四级标题 ##### 五级标题 ###### 六级标题  #二、段落缩进 半个字符大的空白&amp;ensp;或&amp;#8194;看，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/new_dyn/2f428032e74925845e081f840246fead401742377.png%401295w.webp">
+<meta property="article:published_time" content="2022-07-12T12:27:17.000Z">
+<meta property="article:modified_time" content="2022-07-13T09:14:40.120Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="MD语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.hdslb.com/bfs/new_dyn/2f428032e74925845e081f840246fead401742377.png%401295w.webp">
+
+
+<link rel="canonical" href="http://example.com/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html","path":"/post/MD语法规则.html","title":"MD语法规则"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MD语法规则 | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%A2%98Setext%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">标题Setext方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%EF%BC%9AAtx%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">标题：Atx方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">3.</span> <span class="nav-text">2.分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text">3.删除线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-number">5.</span> <span class="nav-text">4.下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%84%9A%E6%B3%A8"><span class="nav-number">6.</span> <span class="nav-text">5.脚注</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%88%97%E8%A1%A8"><span class="nav-number"></span> <span class="nav-text">四、列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">1.无序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">2.有序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">3.嵌套列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number"></span> <span class="nav-text">五、区块引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E4%BB%A3%E7%A0%81"><span class="nav-number"></span> <span class="nav-text">六、代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Tab%E9%94%AE-%E4%BB%A3%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">1.Tab键+代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8F%8D%E5%BC%95%E5%8F%B7%EF%BC%88-96-%EF%BC%89%E5%8C%85%E8%B5%B7%E6%9D%A5-x2F-%E4%B8%89%E4%B8%AA%E5%8F%8D%E5%BC%95%E5%8F%B7%E5%8A%A0%E8%AF%AD%E8%A8%80%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">2.反引号（&#96;）包起来&#x2F;三个反引号加语言名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number"></span> <span class="nav-text">七、链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%96%87%E5%AD%97%E8%B6%85%E9%93%BE%EF%BC%9AInline%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">1.文字超链：Inline方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E9%AB%98%E7%BA%A7%E9%93%BE%E6%8E%A5-%E7%B4%A2%E5%BC%95%E8%B6%85%E9%93%BE%EF%BC%9AReference%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">2.高级链接- 索引超链：Reference方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%9B%BE%E7%89%87%E8%B6%85%E9%93%BE"><span class="nav-number">3.</span> <span class="nav-text">3.图片超链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%87%AA%E5%8A%A8%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">4.自动链接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%A1%A8%E6%A0%BC"><span class="nav-number"></span> <span class="nav-text">八、表格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E5%85%B6%E4%BB%96"><span class="nav-number"></span> <span class="nav-text">九、其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B3%A8%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">1.注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E7%BA%A7%E8%AF%AD%E6%B3%95%E5%88%B0%E6%AD%A4%E7%BB%93%E6%9D%9F"><span class="nav-number"></span> <span class="nav-text">初级语法到此结束!</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MD语法规则 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MD语法规则
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-12 20:27:17" itemprop="dateCreated datePublished" datetime="2022-07-12T20:27:17+08:00">2022-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-13 17:14:40" itemprop="dateModified" datetime="2022-07-13T17:14:40+08:00">2022-07-13</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>#一、目录</p>
+<pre><code>@[TOC](文章标题名)
+一级目录 #+空格
+二级目录 ##+空格
+三级目录 ###+空格
+......
+</code></pre>
+<h2 id="标题Setext方式"><a href="#标题Setext方式" class="headerlink" title="标题Setext方式"></a>标题Setext方式</h2><p>三个或更多</p>
+<pre><code>大标题
+===
+小标题
+---
+</code></pre>
+<h2 id="标题：Atx方式"><a href="#标题：Atx方式" class="headerlink" title="标题：Atx方式"></a>标题：Atx方式</h2><pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre>
+<p>#二、段落缩进</p>
+<pre><code>半个字符大的空白&amp;ensp;或&amp;#8194;看，飞碟
+全字符大的空白&amp;emsp;或&amp;#8195;看，飞碟
+不断行的空白格&amp;nbsp;或&amp;#160;看，飞碟
+&amp;emsp;&amp;emsp;段落从此开始。
+</code></pre>
+<p>如下</p>
+<p>全字符大的空白&amp;emsp;或&amp;#8195;看，飞碟<br>半个字符大的空白&amp;ensp;或&amp;#8194;看，飞碟<br>不断行的空白格&amp;nbsp;或&amp;#160;看，飞碟<br>&amp;emsp;&amp;emsp;段落从此开始。<br>#三、格式<br>星号与下划线都可以，单是斜体，双是粗体，符号可跨行，符号可加空格</p>
+<p>1.字体、字号、颜色</p>
+<pre><code>斜体    _+内容+_
+
+粗体    __+内容+__
+
+粗斜体  ___+内容+___
+</code></pre>
+<p>斜体    <em>+斜体+</em></p>
+<p>粗体    <strong>+粗体+</strong></p>
+<p>粗斜体  <em><strong>+粗斜体+</strong></em></p>
+<pre><code>    &lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;
+    &lt;font face=&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;/font&gt;
+    &lt;font face=&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;/font&gt;
+    &lt;font color=#0099ff size=12 face=&quot;黑体&quot;&gt;黑体&lt;/font&gt;
+    &lt;font color=#00ffff size=3&gt;null&lt;/font&gt;
+    &lt;font color=gray size=5&gt;gray&lt;/font&gt;
+</code></pre>
+<p><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color=#0099ff size=12 face="黑体">黑体</font><br><font color=#00ffff size=3>null</font><br><font color=gray size=5>gray</font></p>
+<h2 id="2-分割线"><a href="#2-分割线" class="headerlink" title="2.分割线"></a>2.分割线</h2><p>三个或更多-_*，必须单独一行，可含空格</p>
+<pre><code>        ---
+        ***
+        ___
+</code></pre>
+<hr>
+<hr>
+<hr>
+<h2 id="3-删除线"><a href="#3-删除线" class="headerlink" title="3.删除线"></a>3.删除线</h2><p>内容前后~~</p>
+<pre><code>~~我是删除线~~
+</code></pre>
+<p><del>我是删除线</del></p>
+<h2 id="4-下划线"><a href="#4-下划线" class="headerlink" title="4.下划线"></a>4.下划线</h2><pre><code>&lt;u&gt;我是下划线&lt;/u&gt;
+</code></pre>
+<p><u>我是下划线</u></p>
+<h2 id="5-脚注"><a href="#5-脚注" class="headerlink" title="5.脚注"></a>5.脚注</h2><pre><code>创建脚注[^脚注]
+[^脚注]:这里写脚注文本
+</code></pre>
+<p>创建脚注[^脚注]</p>
+<h1 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h1><h2 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1.无序列表"></a>1.无序列表</h2><pre><code>* 无序列表1
+* 无序列表2
+</code></pre>
+<ul>
+<li>无序列表1</li>
+<li>无序列表2</li>
+</ul>
+<h2 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2.有序列表"></a>2.有序列表</h2><pre><code>1. 第一项
+2. 第二项
+3. 第三项
+</code></pre>
+<ol start="4">
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h2 id="3-嵌套列表"><a href="#3-嵌套列表" class="headerlink" title="3.嵌套列表"></a>3.嵌套列表</h2><pre><code>    1.  第一项
+    *  第一项子项
+        * 第一项子项的子项
+</code></pre>
+<ol start="2">
+<li>第二项</li>
+</ol>
+<ul>
+<li>第二项子项<ul>
+<li>第二项子项的子项</li>
+</ul>
+</li>
+</ul>
+<h1 id="五、区块引用"><a href="#五、区块引用" class="headerlink" title="五、区块引用"></a>五、区块引用</h1><pre><code>&gt;引用
+&gt;&gt;引用的引用
+&gt;&gt;&gt;引用的引用的引用
+</code></pre>
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>引用的引用</p>
+<blockquote>
+<p>引用的引用的引用</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="六、代码"><a href="#六、代码" class="headerlink" title="六、代码"></a>六、代码</h1><h2 id="1-Tab键-代码"><a href="#1-Tab键-代码" class="headerlink" title="1.Tab键+代码"></a>1.Tab键+代码</h2><h2 id="2-反引号（-96-）包起来-x2F-三个反引号加语言名"><a href="#2-反引号（-96-）包起来-x2F-三个反引号加语言名" class="headerlink" title="2.反引号（&#96;）包起来&#x2F;三个反引号加语言名"></a>2.反引号（&#96;）包起来&#x2F;三个反引号加语言名</h2><p>行内代码</p>
+<p><code>val s = &quot;hello Markdown&quot;     println( s )</code></p>
+<p>三个反引号加语言名</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>段落代码<br>每行文字前加4个空格或者1个Tab</p>
+<pre><code>val s = &quot;hello Markdown&quot;
+println( s )
+val s = &quot;hello Markdown&quot;
+println( s )
+</code></pre>
+<h1 id="七、链接"><a href="#七、链接" class="headerlink" title="七、链接"></a>七、链接</h1><h2 id="1-文字超链：Inline方式"><a href="#1-文字超链：Inline方式" class="headerlink" title="1.文字超链：Inline方式"></a>1.文字超链：Inline方式</h2><pre><code>[文字](链接地址 &quot;提示内容&quot;)
+如：
+[A-Itfuture](https://blog.csdn.net/weixin_43431218?spm=1011.2124.3001.5343 &quot;A-itfuture的博客&quot;)
+</code></pre>
+<p><a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="提示内容">文字</a><br>如：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43431218?spm=1011.2124.3001.5343" title="A-itfuture的博客">A-Itfuture</a></p>
+<pre><code>例子：[中括号](小括号)
+</code></pre>
+<p>例子：<a href="%E5%B0%8F%E6%8B%AC%E5%8F%B7">中括号</a></p>
+<h2 id="2-高级链接-索引超链：Reference方式"><a href="#2-高级链接-索引超链：Reference方式" class="headerlink" title="2.高级链接- 索引超链：Reference方式"></a>2.高级链接- 索引超链：Reference方式</h2><p>设置变量</p>
+<pre><code>这是 [百度][1]的地址
+此处空行
+[1]:http://www.baidu.com
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度</a></p>
+<h2 id="3-图片超链"><a href="#3-图片超链" class="headerlink" title="3.图片超链"></a>3.图片超链</h2><pre><code>![风景图](https://cn.bing.com/images/search?view=detailV2&amp;ccid=A6TpC4oo&amp;  
+id=18E0F0DCC4093907CF8FCA6D75617F54A0D)
+</code></pre>
+<p><img data-src="https://i0.hdslb.com/bfs/new_dyn/2f428032e74925845e081f840246fead401742377.png%401295w.webp" alt="图片"></p>
+<h2 id="4-自动链接"><a href="#4-自动链接" class="headerlink" title="4.自动链接"></a>4.自动链接</h2><p>尖括号</p>
+<pre><code>&lt;http://www.baidu.com&gt;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a></p>
+<h1 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h1><p>| 分隔单元格 - - -分隔表头和其他行<br>对齐方式<br>  -：右对齐<br>  :-左对齐<br>  :—: 居中</p>
+<pre><code>    | 表头一 | 表头二 | 表头三 |
+    | :--- | :---: | ---: |
+    | 1号|2号|3号|
+    | 1号|2号|3号|
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">表头一</th>
+<th align="center">表头二</th>
+<th align="right">表头三</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1月</td>
+<td align="center">2号</td>
+<td align="right">3号</td>
+</tr>
+<tr>
+<td align="left">1月</td>
+<td align="center">4号</td>
+<td align="right">6号</td>
+</tr>
+</tbody></table>
+<p>或者</p>
+<pre><code>    项目     | 价格
+    -------- | ---
+    Computer | $1600
+    Phone    | $12
+    Pipe     | $1
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Computer</td>
+<td>$1600</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td>$1</td>
+</tr>
+</tbody></table>
+<h1 id="九、其他"><a href="#九、其他" class="headerlink" title="九、其他"></a>九、其他</h1><h2 id="1-注释"><a href="#1-注释" class="headerlink" title="1.注释"></a>1.注释</h2><p>html的注释</p>
+<pre><code>&lt;!-- 注释 --&gt;
+</code></pre>
+<!-- 注释 -->
+
+<p>2.转义字符<br>用html的转义字符</p>
+<p>Markdown中的转义字符为\，转义的有</p>
+<pre><code>    \\ 反斜杠
+
+    \` 反引号
+
+    \* 星号
+
+    \_ 下划线
+
+    \&#123;\&#125; 大括号
+
+    \[\] 中括号
+
+    \(\) 小括号
+
+    \# 井号
+
+    \+ 加号
+
+    \- 减号
+
+    \. 英文句号
+
+    \! 感叹号
+</code></pre>
+<p>\ 反斜杠</p>
+<p>` 反引号</p>
+<p>* 星号</p>
+<p>_ 下划线</p>
+<p>{} 大括号</p>
+<p>[] 中括号</p>
+<p>() 小括号</p>
+<p># 井号</p>
+<p>+ 加号</p>
+<p>- 减号</p>
+<p>. 英文句号</p>
+<p>! 感叹号</p>
+<h1 id="初级语法到此结束"><a href="#初级语法到此结束" class="headerlink" title="初级语法到此结束!"></a>初级语法到此结束!</h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>John Doe
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://example.com/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html" title="MD语法规则">http://example.com/post/MD语法规则.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/MD%E8%AF%AD%E6%B3%95/" rel="tag"># MD语法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" rel="prev" title="基本数据类型">
+                  <i class="fa fa-chevron-left"></i> 基本数据类型
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html" rel="next" title="自动类型转换">
+                  自动类型转换 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"neutral","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.3/mermaid.min.js","integrity":"sha256-TIYL00Rhw/8WaoUhYTLX9SKIEFdXxg+yMWSLVUbhiLg="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
