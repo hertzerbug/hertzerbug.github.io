@@ -151,7 +151,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,190 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.html" class="post-title-link" itemprop="url">分支结构</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-18 14:09:39" itemprop="dateCreated datePublished" datetime="2022-07-18T14:09:39+08:00">2022-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-20 21:53:09" itemprop="dateModified" datetime="2022-07-20T21:53:09+08:00">2022-07-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><ol>
+<li>if分支，根据判定的结果（真或假）决定执行某个分支</li>
+</ol>
+<p>if功能强于switch<br>if适合做区间匹配</p>
+<ul>
+<li><p>格式1：</p>
+<pre class="line-numbers language-none"><code class="language-none">if (条件表达式)&#123;
+    语句体;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>例：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;需求：心跳（60-100）之间是正常的，否则系统进一步检查
+   &#x2F;&#x2F;格式1
+   Scanner sc &#x3D; new Scanner(System.in);
+   System.out.println(&quot;请输入您的年龄：&quot;);
+   int heartBate &#x3D; sc.nextInt();
+   if (heartBate &lt; 100 || heartBate &gt; 60) &#123;
+       System.out.println(&quot;心跳正常&quot;);
+   &#125;
+   System.out.println(&quot;检查结束&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>格式2</p>
+<pre class="line-numbers language-none"><code class="language-none">if (条件表达式)&#123;
+    语句体1;
+&#125; else &#123;
+    语句体2;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>格式3</p>
+<pre class="line-numbers language-none"><code class="language-none">if(条件表达式1)&#123;
+    语句体1;
+&#125; else if(条件表达式2)&#123;
+    语句体2;
+&#125; else if (条件表达式2)&#123;
+    语句体2;
+&#125; 
+...
+else &#123;
+    语句体n+1;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<ol start="2">
+<li>switch分支</li>
+</ol>
+<ul>
+<li>适合做匹配的分支选择，结构清晰，格式良好。</li>
+</ul>
+<p>switch适合做值匹配</p>
+<pre class="line-numbers language-none"><code class="language-none">switch(表达式)&#123;
+    case 值1 :
+       &#x2F;&#x2F;语句
+       break; &#x2F;&#x2F;可选
+    case 值2 :
+       &#x2F;&#x2F;语句
+       break; &#x2F;&#x2F;可选
+    &#x2F;&#x2F;你可以有任意数量的case语句
+    case 值n-1 ：
+        break;
+    default : &#x2F;&#x2F;可选
+       &#x2F;&#x2F;执行第n条语句
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>例：</p>
+<pre class="line-numbers language-none"><code class="language-none">package com.itheima.branch;
+
+import java.util.Scanner;
+
+public class SwitchDemo2 &#123;
+    public static void main(String[] args) &#123;
+        Scanner sc &#x3D; new Scanner(System.in);
+        System.out.println(&quot;请输入您的等级：&quot;);
+        char grade &#x3D; sc.next().charAt(0);&#x2F;&#x2F;Scanner键盘输入如何赋值给char类型变量
+        switch(grade)
+        &#123;
+            case &#39;A&#39;:
+                System.out.println(&quot;优秀&quot;);
+                break;
+            case &#39;B&#39; :
+            case &#39;C&#39; :
+                System.out.println(&quot;良好&quot;);
+                break;
+            case &#39;D&#39; :
+                System.out.println(&quot;及格&quot;);
+                break;
+            case &#39;F&#39; :
+                System.out.println(&quot;你需要再努力努力&quot;);
+                break;
+            default :
+                System.out.println(&quot;未知等级&quot;);
+        &#125;
+        System.out.println(&quot;你的等级是 &quot; + grade);
+    &#125;
+
+    private static class string &#123;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>注意事项：</li>
+<li><ul>
+<li>表达式类型只能是 byte、short、int、char，JDK5开始支持枚举，JDK7开始支持String、不支持double、float、long。</li>
+</ul>
+</li>
+<li><ul>
+<li>case给出的值不允许重复，且只能是字面量，不能是变量。</li>
+</ul>
+</li>
+<li><ul>
+<li>不能忘记写break，会发生穿透。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1650,99 +1834,6 @@ public class SwitchDemo2 &#123;
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.html" class="post-title-link" itemprop="url">自动类型转换</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-13 16:00:46" itemprop="dateCreated datePublished" datetime="2022-07-13T16:00:46+08:00">2022-07-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-14 18:37:39" itemprop="dateModified" datetime="2022-07-14T18:37:39+08:00">2022-07-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>byte–short–int–long–float–double</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>itheima<span class="token punctuation">.</span>type</span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TypeDemo1</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//自动类型转换</span>
-        <span class="token comment">//类型范围小的变量可以直接赋值给类型范围大的变量</span>
-        <span class="token keyword">byte</span> a <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> b <span class="token operator">=</span> a <span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-        <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> db <span class="token operator">=</span> age <span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>db<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//结果为23.0</span>
-        
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
       
     </div>
 
