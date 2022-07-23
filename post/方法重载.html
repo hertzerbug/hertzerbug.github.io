@@ -21,27 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":"ture","pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="方法重载方法重载 同一个类中，出现多个方法名称相同，但是形参列表是不同的，那么这些方法就是重载方法。  示例： package overload;  public class MedthodDemo1 &amp;#123;     public static void main(String[] args) &amp;#123;         &#x2F;&#x2F;识别方法重载的形式，并理解其调用流程，最后知道使用方法重载的好处">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/post/hello-world.html">
+<meta property="og:title" content="方法重载">
+<meta property="og:url" content="http://example.com/post/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="方法重载方法重载 同一个类中，出现多个方法名称相同，但是形参列表是不同的，那么这些方法就是重载方法。  示例： package overload;  public class MedthodDemo1 &amp;#123;     public static void main(String[] args) &amp;#123;         &#x2F;&#x2F;识别方法重载的形式，并理解其调用流程，最后知道使用方法重载的好处">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-12T10:01:47.495Z">
-<meta property="article:modified_time" content="2022-07-12T10:01:47.496Z">
+<meta property="article:published_time" content="2022-07-23T07:58:01.000Z">
+<meta property="article:modified_time" content="2022-07-23T08:33:36.265Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java入门">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/post/hello-world.html">
+<link rel="canonical" href="http://example.com/post/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/post/hello-world.html","path":"/post/hello-world.html","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/post/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.html","path":"/post/方法重载.html","title":"方法重载"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | Hexo</title>
+<title>方法重载 | Hexo</title>
   
 
 
@@ -143,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="nav-number">1.</span> <span class="nav-text">方法重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD-1"><span class="nav-number">1.1.</span> <span class="nav-text">方法重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E7%9A%84%E8%AF%86%E5%88%AB%E6%8A%80%E5%B7%A7"><span class="nav-number">1.2.</span> <span class="nav-text">方法重载的识别技巧</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/post/hello-world.html">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -215,12 +216,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hello World | Hexo">
+      <meta itemprop="name" content="方法重载 | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          方法重载
         </h1>
 
         <div class="post-meta-container">
@@ -230,8 +231,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2022-07-12 18:01:47" itemprop="dateCreated datePublished" datetime="2022-07-12T18:01:47+08:00">2022-07-12</time>
+      <time title="Created: 2022-07-23 15:58:01 / Modified: 16:33:36" itemprop="dateCreated datePublished" datetime="2022-07-23T15:58:01+08:00">2022-07-23</time>
     </span>
 
   
@@ -251,19 +253,40 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        <h1 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h1><h2 id="方法重载-1"><a href="#方法重载-1" class="headerlink" title="方法重载"></a>方法重载</h2><ol>
+<li><p>同一个类中，出现多个方法名称相同，但是形参列表是不同的，那么这些方法就是重载方法。</p>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">overload</span><span class="token punctuation">;</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MedthodDemo1</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//识别方法重载的形式，并理解其调用流程，最后知道使用方法重载的好处。</span>
+        
+        <span class="token function">fire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//默认发射一枚武器给米国~~~</span>
+        <span class="token function">fire</span><span class="token punctuation">(</span><span class="token string">"岛国"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//发射一枚武器给岛国~~~</span>
+        <span class="token function">fire</span><span class="token punctuation">(</span><span class="token string">"岛国"</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//默认发射1000枚武器岛国~~~</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认发射一枚武器给米国~~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fire</span><span class="token punctuation">(</span><span class="token class-name">String</span> location<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"发射一枚武器给"</span> <span class="token operator">+</span> location <span class="token operator">+</span> <span class="token string">"~~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fire</span><span class="token punctuation">(</span><span class="token class-name">String</span> location<span class="token punctuation">,</span><span class="token keyword">int</span> number<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认发射"</span> <span class="token operator">+</span> number <span class="token operator">+</span> <span class="token string">"枚武器"</span> <span class="token operator">+</span>location <span class="token operator">+</span> <span class="token string">"~~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>总结：</p>
+<ul>
+<li>方法重载的好处：对于相似功能的业务场景；可读性好。方法名称相同提示是同一类型的功能，通过形参不同实现差异化的选择，这是一种专业的代码设计。</li>
+</ul>
+</li>
+</ol>
+<h2 id="方法重载的识别技巧"><a href="#方法重载的识别技巧" class="headerlink" title="方法重载的识别技巧"></a>方法重载的识别技巧</h2><ul>
+<li>只要是同一个类中，方法名称相同、形参列表不同，那么他们就是重载的方法，其他都不管！（如：修饰符，返回值类型都无所谓）</li>
+<li>形参列表不同指：形参的个数、类型顺序不同。不关心形参的名称。</li>
+</ul>
 
     </div>
 
@@ -272,15 +295,21 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java%E5%85%A5%E9%97%A8/" rel="tag"># Java入门</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/post/%E6%96%B9%E6%B3%95%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6.html" rel="prev" title="方法的参数传递机制">
+                  <i class="fa fa-chevron-left"></i> 方法的参数传递机制
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0.html" rel="next" title="第一篇文章">
-                  第一篇文章 <i class="fa fa-chevron-right"></i>
+                <a href="/post/return%E5%85%B3%E9%94%AE%E5%AD%97.html" rel="next" title="return关键字">
+                  return关键字 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
