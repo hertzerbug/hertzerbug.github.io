@@ -29,7 +29,7 @@
 <meta property="og:description" content="【案例2-6】  登录注册小程序【案例介绍】 任务描述编写程序实现简单的登录注册功能。程序包含以下4个功能：（1）登录功能，用户输入正确的账号密码进行成功；（2）注册功能，输入用户名和密码进行注册；（3）查看功能，查看所有的用户名与密码；（4）退出功能，退出系统。用户可以输入对应的编号进行相应的功能操作。例如，输入2进入注册功能，输入用户名和密码进行注册。 运行结果  【案例目标】 学会分析”登录">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-23T08:55:42.000Z">
-<meta property="article:modified_time" content="2022-07-23T12:46:06.335Z">
+<meta property="article:modified_time" content="2022-07-25T08:57:48.217Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="案例">
 <meta name="twitter:card" content="summary">
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -231,9 +231,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-07-23 16:55:42 / Modified: 20:46:06" itemprop="dateCreated datePublished" datetime="2022-07-23T16:55:42+08:00">2022-07-23</time>
+      <time title="Created: 2022-07-23 16:55:42" itemprop="dateCreated datePublished" datetime="2022-07-23T16:55:42+08:00">2022-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-25 16:57:48" itemprop="dateModified" datetime="2022-07-25T16:57:48+08:00">2022-07-25</time>
     </span>
 
   
@@ -275,24 +281,135 @@
 <li>“登录注册”程序明确的分为4个功能，如果将多个独立的功能代码写在一起，代码将会相对冗长，可以使用针对不同功能将其封装到不同的方法中，将完整独立的功能分离出来，然后只需要在程序的main()方法中调用方法即可。</li>
 </ol>
 <h2 id="【案例实现】"><a href="#【案例实现】" class="headerlink" title="【案例实现】"></a>【案例实现】</h2><p>登录注册程序的实现代码:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">chapter0206</span><span class="token punctuation">;</span>
 
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span></span><span class="token punctuation">;</span>
 
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> arr1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> arr2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        arr1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"admin"</span><span class="token punctuation">;</span>
+        arr2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"123456"</span><span class="token punctuation">;</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请选择功能："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> a <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+                    <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+                    <span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+                    <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span>
+                    <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">default</span><span class="token operator">:</span>
+                    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你输入的值错误。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/*
+     * 登录功能，键盘输入用户名与密码
+     * 使用for循环加if判断验证输入的用户名与密码是否正确
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Scanner</span> sc1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入用户名"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> name <span class="token operator">=</span> sc1<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Scanner</span> sc2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入密码"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> password <span class="token operator">=</span> sc2<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr2<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>name<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> password<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>arr2<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"登录成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"登陆失败，请重新输入！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/*
+     * 注册功能，键盘输入用户名与密码
+     * 定义一个boolean变量，使用for循序判断用户是否存在
+     * 如果用户不存在，在数组中插入注册的账号密码时
+     * 可能会有数组长度不够的情况，所以需要使用到
+     * 增加数组的长度，这里调用增加数组长度的方法add()。
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Scanner</span> sc1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入用户名"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> name <span class="token operator">=</span> sc1<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Scanner</span> sc2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入密码"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> password <span class="token operator">=</span> sc2<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr1<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>name<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你输入的用户名已存在"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            index<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> arr1<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                arr1<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> name<span class="token punctuation">;</span>
+                arr2<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> password<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"注册成功！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                arr1<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> name<span class="token punctuation">;</span>
+                arr2<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> password<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"注册成功！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/*
+     * 查看功能
+     * 使用for循环打印两个数组的长度
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr1<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"用户名："</span> <span class="token operator">+</span> arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">",密码："</span> <span class="token operator">+</span> arr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/*
+     * 增加数组长度
+     * 先定义两个新的数组并在原有的数组长度上加3
+     * 使用System的arraycopy方法复制原有的数组到新的数组
+     * 最后将新的数组赋值给原有的arr1与aar2
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> newarray1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span>arr1<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> newarray2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span>arr1<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>newarray1<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>arr1<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>arr2<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>newarray2<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>arr2<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arr1 <span class="token operator">=</span> newarray1<span class="token punctuation">;</span>
+        arr2 <span class="token operator">=</span> newarray2<span class="token punctuation">;</span>
+        <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/*
+     * 可操作功能的显示
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"--------------------注册管理系统 --------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" 1.登录功能 (login) "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" 2.注册功能(register) "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" 3.查看(show) "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" 0.退出(exit) "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"--------------------注册管理系统 --------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在代码中，第6 ~ 8行代码使用static定义了全局变量arr1[]数组用于用户名存储，arr2[]数组用于密码存储，index用于数组的下标。第39 - 55行代码定义了用户登录的方法，使用for循环数组的长度，使用if判断输入的用户名与密码是否与数组中的匹配，可以得出登录成功或者失败。<br>第63 ~ 90行代码是用户注册的方法，定义一个boolean变量，使用for循序判断用户是否存在如果用户不存在，在数组中插入注册的账号密码时可能会有数组长度不够的情况，所以需要使用到增加数组的长度，这里调用增加数组长度的方法add()。<br>第95 ~ 101行代码是查看方法是实现，使用for循环打印arr1[]与arr2[]。<br>第108 ~ 116行代码是增加数组长度的方法，先定义两个新的数组并在原有的数组长度上加3使用System的arraycopy方法复制原有的数组到新的数组最后将新的数组赋值给原有的arr1与aar2。<br>第120 ~ 128行代码是对可操作功能的显示。<br>第11 ~ 32行代码是main方法，使用while循环用户操作，调用封装好的方法实现登录注册小功能。</p>
 
     </div>
 

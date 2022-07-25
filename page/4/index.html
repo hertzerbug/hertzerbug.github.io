@@ -151,7 +151,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,315 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html" class="post-title-link" itemprop="url">MD语法规则</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-12 20:27:17" itemprop="dateCreated datePublished" datetime="2022-07-12T20:27:17+08:00">2022-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-13 17:14:40" itemprop="dateModified" datetime="2022-07-13T17:14:40+08:00">2022-07-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>#一、目录</p>
+<pre><code>@[TOC](文章标题名)
+一级目录 #+空格
+二级目录 ##+空格
+三级目录 ###+空格
+......
+</code></pre>
+<h2 id="标题Setext方式"><a href="#标题Setext方式" class="headerlink" title="标题Setext方式"></a>标题Setext方式</h2><p>三个或更多</p>
+<pre><code>大标题
+===
+小标题
+---
+</code></pre>
+<h2 id="标题：Atx方式"><a href="#标题：Atx方式" class="headerlink" title="标题：Atx方式"></a>标题：Atx方式</h2><pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre>
+<p>#二、段落缩进</p>
+<pre><code>半个字符大的空白&amp;ensp;或&amp;#8194;看，飞碟
+全字符大的空白&amp;emsp;或&amp;#8195;看，飞碟
+不断行的空白格&amp;nbsp;或&amp;#160;看，飞碟
+&amp;emsp;&amp;emsp;段落从此开始。
+</code></pre>
+<p>如下</p>
+<p>全字符大的空白&amp;emsp;或&amp;#8195;看，飞碟<br>半个字符大的空白&amp;ensp;或&amp;#8194;看，飞碟<br>不断行的空白格&amp;nbsp;或&amp;#160;看，飞碟<br>&amp;emsp;&amp;emsp;段落从此开始。<br>#三、格式<br>星号与下划线都可以，单是斜体，双是粗体，符号可跨行，符号可加空格</p>
+<p>1.字体、字号、颜色</p>
+<pre><code>斜体    _+内容+_
+
+粗体    __+内容+__
+
+粗斜体  ___+内容+___
+</code></pre>
+<p>斜体    <em>+斜体+</em></p>
+<p>粗体    <strong>+粗体+</strong></p>
+<p>粗斜体  <em><strong>+粗斜体+</strong></em></p>
+<pre><code>    &lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;
+    &lt;font face=&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;/font&gt;
+    &lt;font face=&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;/font&gt;
+    &lt;font color=#0099ff size=12 face=&quot;黑体&quot;&gt;黑体&lt;/font&gt;
+    &lt;font color=#00ffff size=3&gt;null&lt;/font&gt;
+    &lt;font color=gray size=5&gt;gray&lt;/font&gt;
+</code></pre>
+<p><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color=#0099ff size=12 face="黑体">黑体</font><br><font color=#00ffff size=3>null</font><br><font color=gray size=5>gray</font></p>
+<h2 id="2-分割线"><a href="#2-分割线" class="headerlink" title="2.分割线"></a>2.分割线</h2><p>三个或更多-_*，必须单独一行，可含空格</p>
+<pre><code>        ---
+        ***
+        ___
+</code></pre>
+<hr>
+<hr>
+<hr>
+<h2 id="3-删除线"><a href="#3-删除线" class="headerlink" title="3.删除线"></a>3.删除线</h2><p>内容前后~~</p>
+<pre><code>~~我是删除线~~
+</code></pre>
+<p><del>我是删除线</del></p>
+<h2 id="4-下划线"><a href="#4-下划线" class="headerlink" title="4.下划线"></a>4.下划线</h2><pre><code>&lt;u&gt;我是下划线&lt;/u&gt;
+</code></pre>
+<p><u>我是下划线</u></p>
+<h2 id="5-脚注"><a href="#5-脚注" class="headerlink" title="5.脚注"></a>5.脚注</h2><pre><code>创建脚注[^脚注]
+[^脚注]:这里写脚注文本
+</code></pre>
+<p>创建脚注[^脚注]</p>
+<h1 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h1><h2 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1.无序列表"></a>1.无序列表</h2><pre><code>* 无序列表1
+* 无序列表2
+</code></pre>
+<ul>
+<li>无序列表1</li>
+<li>无序列表2</li>
+</ul>
+<h2 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2.有序列表"></a>2.有序列表</h2><pre><code>1. 第一项
+2. 第二项
+3. 第三项
+</code></pre>
+<ol start="4">
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h2 id="3-嵌套列表"><a href="#3-嵌套列表" class="headerlink" title="3.嵌套列表"></a>3.嵌套列表</h2><pre><code>    1.  第一项
+    *  第一项子项
+        * 第一项子项的子项
+</code></pre>
+<ol start="2">
+<li>第二项</li>
+</ol>
+<ul>
+<li>第二项子项<ul>
+<li>第二项子项的子项</li>
+</ul>
+</li>
+</ul>
+<h1 id="五、区块引用"><a href="#五、区块引用" class="headerlink" title="五、区块引用"></a>五、区块引用</h1><pre><code>&gt;引用
+&gt;&gt;引用的引用
+&gt;&gt;&gt;引用的引用的引用
+</code></pre>
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>引用的引用</p>
+<blockquote>
+<p>引用的引用的引用</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="六、代码"><a href="#六、代码" class="headerlink" title="六、代码"></a>六、代码</h1><h2 id="1-Tab键-代码"><a href="#1-Tab键-代码" class="headerlink" title="1.Tab键+代码"></a>1.Tab键+代码</h2><h2 id="2-反引号（-96-）包起来-x2F-三个反引号加语言名"><a href="#2-反引号（-96-）包起来-x2F-三个反引号加语言名" class="headerlink" title="2.反引号（&#96;）包起来&#x2F;三个反引号加语言名"></a>2.反引号（&#96;）包起来&#x2F;三个反引号加语言名</h2><p>行内代码</p>
+<p><code>val s = &quot;hello Markdown&quot;     println( s )</code></p>
+<p>三个反引号加语言名</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>段落代码<br>每行文字前加4个空格或者1个Tab</p>
+<pre><code>val s = &quot;hello Markdown&quot;
+println( s )
+val s = &quot;hello Markdown&quot;
+println( s )
+</code></pre>
+<h1 id="七、链接"><a href="#七、链接" class="headerlink" title="七、链接"></a>七、链接</h1><h2 id="1-文字超链：Inline方式"><a href="#1-文字超链：Inline方式" class="headerlink" title="1.文字超链：Inline方式"></a>1.文字超链：Inline方式</h2><pre><code>[文字](链接地址 &quot;提示内容&quot;)
+如：
+[A-Itfuture](https://blog.csdn.net/weixin_43431218?spm=1011.2124.3001.5343 &quot;A-itfuture的博客&quot;)
+</code></pre>
+<p><a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="提示内容">文字</a><br>如：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43431218?spm=1011.2124.3001.5343" title="A-itfuture的博客">A-Itfuture</a></p>
+<pre><code>例子：[中括号](小括号)
+</code></pre>
+<p>例子：<a href="%E5%B0%8F%E6%8B%AC%E5%8F%B7">中括号</a></p>
+<h2 id="2-高级链接-索引超链：Reference方式"><a href="#2-高级链接-索引超链：Reference方式" class="headerlink" title="2.高级链接- 索引超链：Reference方式"></a>2.高级链接- 索引超链：Reference方式</h2><p>设置变量</p>
+<pre><code>这是 [百度][1]的地址
+此处空行
+[1]:http://www.baidu.com
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度</a></p>
+<h2 id="3-图片超链"><a href="#3-图片超链" class="headerlink" title="3.图片超链"></a>3.图片超链</h2><pre><code>![风景图](https://cn.bing.com/images/search?view=detailV2&amp;ccid=A6TpC4oo&amp;  
+id=18E0F0DCC4093907CF8FCA6D75617F54A0D)
+</code></pre>
+<p><img data-src="https://i0.hdslb.com/bfs/new_dyn/2f428032e74925845e081f840246fead401742377.png%401295w.webp" alt="图片"></p>
+<h2 id="4-自动链接"><a href="#4-自动链接" class="headerlink" title="4.自动链接"></a>4.自动链接</h2><p>尖括号</p>
+<pre><code>&lt;http://www.baidu.com&gt;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a></p>
+<h1 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h1><p>| 分隔单元格 - - -分隔表头和其他行<br>对齐方式<br>  -：右对齐<br>  :-左对齐<br>  :—: 居中</p>
+<pre><code>    | 表头一 | 表头二 | 表头三 |
+    | :--- | :---: | ---: |
+    | 1号|2号|3号|
+    | 1号|2号|3号|
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">表头一</th>
+<th align="center">表头二</th>
+<th align="right">表头三</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1月</td>
+<td align="center">2号</td>
+<td align="right">3号</td>
+</tr>
+<tr>
+<td align="left">1月</td>
+<td align="center">4号</td>
+<td align="right">6号</td>
+</tr>
+</tbody></table>
+<p>或者</p>
+<pre><code>    项目     | 价格
+    -------- | ---
+    Computer | $1600
+    Phone    | $12
+    Pipe     | $1
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Computer</td>
+<td>$1600</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td>$1</td>
+</tr>
+</tbody></table>
+<h1 id="九、其他"><a href="#九、其他" class="headerlink" title="九、其他"></a>九、其他</h1><h2 id="1-注释"><a href="#1-注释" class="headerlink" title="1.注释"></a>1.注释</h2><p>html的注释</p>
+<pre><code>&lt;!-- 注释 --&gt;
+</code></pre>
+<!-- 注释 -->
+
+<p>2.转义字符<br>用html的转义字符</p>
+<p>Markdown中的转义字符为\，转义的有</p>
+<pre><code>    \\ 反斜杠
+
+    \` 反引号
+
+    \* 星号
+
+    \_ 下划线
+
+    \&#123;\&#125; 大括号
+
+    \[\] 中括号
+
+    \(\) 小括号
+
+    \# 井号
+
+    \+ 加号
+
+    \- 减号
+
+    \. 英文句号
+
+    \! 感叹号
+</code></pre>
+<p>\ 反斜杠</p>
+<p>` 反引号</p>
+<p>* 星号</p>
+<p>_ 下划线</p>
+<p>{} 大括号</p>
+<p>[] 中括号</p>
+<p>() 小括号</p>
+<p># 井号</p>
+<p>+ 加号</p>
+<p>- 减号</p>
+<p>. 英文句号</p>
+<p>! 感叹号</p>
+<h1 id="初级语法到此结束"><a href="#初级语法到此结束" class="headerlink" title="初级语法到此结束!"></a>初级语法到此结束!</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
