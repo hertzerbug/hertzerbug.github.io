@@ -224,8 +224,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2022-07-26 16:29:20" itemprop="dateCreated datePublished" datetime="2022-07-26T16:29:20+08:00">2022-07-26</time>
+      <time title="Created: 2022-07-26 16:29:20 / Modified: 23:39:10" itemprop="dateCreated datePublished" datetime="2022-07-26T16:29:20+08:00">2022-07-26</time>
     </span>
 
   
@@ -238,7 +239,380 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <h1 id="面向对象编程训练：模拟购物车模块"><a href="#面向对象编程训练：模拟购物车模块" class="headerlink" title="面向对象编程训练：模拟购物车模块"></a>面向对象编程训练：模拟购物车模块</h1><h2 id="购物车模块模拟-架构搭建"><a href="#购物车模块模拟-架构搭建" class="headerlink" title="购物车模块模拟-架构搭建"></a>购物车模块模拟-架构搭建</h2><ol>
+<li>需求：模拟购物车模块的功能，需要添加商品到购物车中去，同时需要提供修改商品的购买数量，结算商品价格功能（请使用面向对象编程来解决）</li>
+<li>分析：</li>
+</ol>
+<ul>
+<li>购物车中的每个商品都是一个对象，需要定义一个商品类。</li>
+<li>购物车本身也是一个对象：可以使用数组对象代表他。</li>
+<li>完成界面架构，让用户选择操作的功能。</li>
+</ul>
+<ol start="3">
+<li>基本代码：<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">demo</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShopCarText</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//1.定义商品类，用于后期创建商品对象</span>
+        <span class="token comment">//2.定义购物车对象，使用一个数组对象标识。</span>
+        <span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.搭建操作架构</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你选择如下命令进行操作："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"添加商品到购物车：add"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"查询商品到购物车：query"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改商品购买数量：update"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结算购买商品金额：pay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入命令："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> command <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">case</span> <span class="token string">"add"</span><span class="token operator">:</span>
+                <span class="token comment">//添加商品到购物车</span>
+                <span class="token function">addGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">"query"</span><span class="token operator">:</span>
+                <span class="token comment">//查询商品到购物车</span>
+                <span class="token function">queryGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">"apdate"</span><span class="token operator">:</span>
+                <span class="token comment">//修改商品购买数量</span>
+                <span class="token function">uodataGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">"pay"</span><span class="token operator">:</span>
+                <span class="token comment">//结算购买商品金额</span>
+                <span class="token function">patGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                <span class="token comment">//输入错误</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你输入的命令错误！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">patGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">uodataGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">queryGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>阶段总结：<br> （1）购物车中的每个商品可以看成什么，需要先做什么准备？<ul>
+<li>可以看作一个个对象</li>
+<li>定义商品类：Goods，后期创建对象代表一个商品信息。<br> （2）购物车对象用什么表示的，可以用来干什么？</li>
+<li>购物车可以使用商品类型的数组对象表示，可以用于存放商品对象。</li>
+<li>Goods[] sharCar &#x3D; new Goods[];</li>
+</ul>
+</li>
+</ol>
+<h2 id="购物车模块模拟-添加商品到购物车、查看商品信息"><a href="#购物车模块模拟-添加商品到购物车、查看商品信息" class="headerlink" title="购物车模块模拟-添加商品到购物车、查看商品信息"></a>购物车模块模拟-添加商品到购物车、查看商品信息</h2><ol>
+<li>需求：<ul>
+<li>让用户输入商品信息，并加入到购物车中去，且可立即查看购物车信息。</li>
+</ul>
+</li>
+<li>分析:<ul>
+<li>需要让用户录入商品信息，创建对象封装商品信息。</li>
+<li>并把商品对象加入到购物车数组中去。</li>
+<li>查询购物车信息，就是便利购物车数组中的每个对象。</li>
+</ul>
+</li>
+<li>代码实现<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+  * 完成商品添加到购物车的功能
+  *
+  */</span>
+ <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">,</span><span class="token class-name">Scanner</span> sc<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+     <span class="token comment">//1.录入用户输入的购买商品的信息</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的编号（不重复）"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">int</span> id <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的名称："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token class-name">String</span> name <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的数量："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">int</span> buyNumber <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的价格："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">double</span> price <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextDouble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment">//2.把这些购买商品的信息封装成一个对象</span>
+     <span class="token class-name">Goods</span> g <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Goods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     g<span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+     g<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+     g<span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+     g<span class="token punctuation">.</span>buyNumber <span class="token operator">=</span> buyNumber<span class="token punctuation">;</span>
+
+     <span class="token comment">//3.把这个商品对象添加到宿主中去</span>
+     <span class="token comment">//shopCar = [a,a1,null,.....]</span>
+     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> shopCar<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+             <span class="token comment">//说明此位置没有元素录入，把我们新买的商品添加到此处即可</span>
+             shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> g<span class="token punctuation">;</span>
+             <span class="token keyword">break</span><span class="token punctuation">;</span><span class="token comment">//不需要找位置，商品以及成功存入。</span>
+         <span class="token punctuation">&#125;</span>
+     <span class="token punctuation">&#125;</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你的商品"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"添加到购物车完成！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+ * 查询购物车中的商品对象信息，并展示出来；
+
+ */</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">queryGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===查询购物车信息==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"编号\t\t名称\t\t\t价格\t\t\t购买数量"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//shopCar = [g1,g2,g3,null,null...]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> shopCar<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Goods</span> g <span class="token operator">=</span> shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//展示这个商品</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>price <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>buyNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//遍历结束</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>阶段总结<br> （1）如何完成的添加商品功能？<ul>
+<li>创建Goods类的对象代表商品对象，封装用户输入的商品信息。</li>
+<li>把商品第项存入到购物车的数组中去。<br> （2）如何查看购物和信息？</li>
+<li>遍历购物车的数组，每遍历到一个商品对象输出其信息展示。</li>
+</ul>
+</li>
+</ol>
+<h2 id="购物车模块训练-修改购买数量"><a href="#购物车模块训练-修改购买数量" class="headerlink" title="购物车模块训练-修改购买数量"></a>购物车模块训练-修改购买数量</h2><ol>
+<li>需求：让用户输入id，找出对应商品修改其购买数量</li>
+<li>分析：<ul>
+<li>定义方法能够根据用户输入的id去购物车数组中查看是否存在该商品对象。</li>
+<li>存在返回该商品对象的地址，不存在返回null。</li>
+<li>判断返回的对象地址是否存在，存在修改其购买数量，不存在就继续。</li>
+</ul>
+</li>
+<li>代码实现：<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//方法：修改购买商品数量</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">updataGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">,</span><span class="token class-name">Scanner</span> sc<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//让用户输入要修改商品的id</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入要修改的商品id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Goods</span> g <span class="token operator">=</span> <span class="token function">getGoodsByte</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">,</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//没有该商品</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"对不起，没有购买该商品！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//说明存在该商品对象，可以修改他</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入："</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"新的购买数量"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> buyNumber <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            g<span class="token punctuation">.</span>buyNumber <span class="token operator">=</span> buyNumber<span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改完成！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">queryGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>总结<br> （1）如何修改商品的数量？<ul>
+<li>根据用户输入的商品id查询出要修改的商品对象。</li>
+</ul>
+</li>
+</ol>
+<h2 id="购物车模块模拟-结算支付金额"><a href="#购物车模块模拟-结算支付金额" class="headerlink" title="购物车模块模拟-结算支付金额"></a>购物车模块模拟-结算支付金额</h2><ol>
+<li>需求：<br>当用户输入pay命令后，需要展示全部购买的商品信息和总金额。</li>
+<li>分析<ul>
+<li>定义求和变量，遍历购物车数组中的全部商品，累加其单价*购买数量。</li>
+</ul>
+</li>
+<li>代码实现：<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//方法结算商品金额</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">patGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">queryGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//定义一个求和变量累加金额</span>
+        <span class="token keyword">double</span> money <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.遍历购物车数组中的全部商品对象，累计单价*数量</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> shopCar<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Goods</span> g <span class="token operator">=</span> shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                money <span class="token operator">+=</span> <span class="token punctuation">(</span>g<span class="token punctuation">.</span>price <span class="token operator">*</span> g<span class="token punctuation">.</span>buyNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"订单总金额："</span> <span class="token operator">+</span> money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>总结<br> （1）如何进行商品订单总额进行计算？<ul>
+<li>定义求和变量，遍历购物车数组中的全部商品，累加其单价*购买数量。</li>
+</ul>
+</li>
+</ol>
+<h2 id="全部代码实现"><a href="#全部代码实现" class="headerlink" title="全部代码实现"></a>全部代码实现</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">demo</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShopCarText</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//1.定义商品类，用于后期创建商品对象</span>
+        <span class="token comment">//2.定义购物车对象，使用一个数组对象标识。</span>
+        <span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.搭建操作架构</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你选择如下命令进行操作："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"添加商品到购物车：add"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"查询商品到购物车：query"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改商品购买数量：update"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结算购买商品金额：pay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"退出系统（0）"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入命令："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> command <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">case</span> <span class="token string">"add"</span><span class="token operator">:</span>
+                    <span class="token comment">//添加商品到购物车</span>
+                    <span class="token function">addGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">,</span>sc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">"query"</span><span class="token operator">:</span>
+                    <span class="token comment">//查询商品到购物车</span>
+                    <span class="token function">queryGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">"update"</span><span class="token operator">:</span>
+                    <span class="token comment">//修改商品购买数量</span>
+                    <span class="token function">updataGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">,</span>sc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">"pay"</span><span class="token operator">:</span>
+                    <span class="token comment">//结算购买商品金额</span>
+                    <span class="token function">patGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">"0"</span><span class="token operator">:</span>
+                    <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">default</span><span class="token operator">:</span>
+                    <span class="token comment">//输入错误</span>
+                    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你输入的命令错误！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token comment">//方法结算商品金额</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">patGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">queryGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//定义一个求和变量累加金额</span>
+        <span class="token keyword">double</span> money <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.遍历购物车数组中的全部商品对象，累计单价*数量</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> shopCar<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Goods</span> g <span class="token operator">=</span> shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                money <span class="token operator">+=</span> <span class="token punctuation">(</span>g<span class="token punctuation">.</span>price <span class="token operator">*</span> g<span class="token punctuation">.</span>buyNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"订单总金额："</span> <span class="token operator">+</span> money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//方法：修改购买商品数量</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">updataGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">,</span><span class="token class-name">Scanner</span> sc<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//让用户输入要修改商品的id</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入要修改的商品id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> id <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Goods</span> g <span class="token operator">=</span> <span class="token function">getGoodsByte</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">,</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//没有该商品</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"对不起，没有购买该商品！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//说明存在该商品对象，可以修改他</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入："</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"新的购买数量"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">int</span> buyNumber <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                g<span class="token punctuation">.</span>buyNumber <span class="token operator">=</span> buyNumber<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改完成！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">queryGoods</span><span class="token punctuation">(</span>shopCar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">//判断商品id是否存在</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Goods</span> <span class="token function">getGoodsByte</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar <span class="token punctuation">,</span><span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//shopCar = [g1,g2,g3,null,null,...]</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> shopCar<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Goods</span> g <span class="token operator">=</span> shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//判断这个商品对象的id是否是我们要找的</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span>id <span class="token operator">==</span> id<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    <span class="token keyword">return</span> g<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span><span class="token comment">//代表找完100个商品也没有找到id一样的商品</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 查询购物车中的商品对象信息，并展示出来；
+
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">queryGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===查询购物车信息==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"编号\t\t名称\t\t\t价格\t\t\t购买数量"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//shopCar = [g1,g2,g3,null,null...]</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> shopCar<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Goods</span> g <span class="token operator">=</span> shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//展示这个商品</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>price <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>buyNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//遍历结束</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 完成商品添加到购物车的功能
+     *
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addGoods</span><span class="token punctuation">(</span><span class="token class-name">Goods</span><span class="token punctuation">[</span><span class="token punctuation">]</span> shopCar<span class="token punctuation">,</span><span class="token class-name">Scanner</span> sc<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//1.录入用户输入的购买商品的信息</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的编号（不重复）"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的名称："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> name <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的数量："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> buyNumber <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请你输入购买商品的价格："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> price <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextDouble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//2.把这些购买商品的信息封装成一个对象</span>
+        <span class="token class-name">Goods</span> g <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Goods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        g<span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+        g<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        g<span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+        g<span class="token punctuation">.</span>buyNumber <span class="token operator">=</span> buyNumber<span class="token punctuation">;</span>
+
+        <span class="token comment">//3.把这个商品对象添加到宿主中去</span>
+        <span class="token comment">//shopCar = [a,a1,null,.....]</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> shopCar<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//说明此位置没有元素录入，把我们新买的商品添加到此处即可</span>
+                shopCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> g<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span><span class="token comment">//不需要找位置，商品以及成功存入。</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你的商品"</span> <span class="token operator">+</span> g<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"添加到购物车完成！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
     </div>
 
