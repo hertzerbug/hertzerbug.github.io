@@ -151,7 +151,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -187,6 +187,368 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E6%A1%88%E4%BE%8B%E6%8A%80%E6%9C%AFRandom%E7%B1%BB.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/%E6%A1%88%E4%BE%8B%E6%8A%80%E6%9C%AFRandom%E7%B1%BB.html" class="post-title-link" itemprop="url">案例技术Random类</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-17 18:29:29" itemprop="dateCreated datePublished" datetime="2022-07-17T18:29:29+08:00">2022-07-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-18 14:55:48" itemprop="dateModified" datetime="2022-07-18T14:55:48+08:00">2022-07-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Random随机数技术"><a href="#Random随机数技术" class="headerlink" title="Random随机数技术"></a>Random随机数技术</h1><ul>
+<li>作用：用于在计算机获取随机数的技术。</li>
+</ul>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li>导包：告诉程序去JDK的哪个包中找随机数技术</li>
+<li>写一行代码代表得到随机数对象</li>
+<li>调用随机数的功能获取0 ~ 9的随机数。</li>
+</ol>
+<p>注意</p>
+<ul>
+<li>nextint(n)功能只能生成0至n-1之间的随机数，不包括n。</li>
+</ul>
+<p>示例：随机生成0 ~ 9之间的数</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>itheima<span class="token punctuation">.</span>random</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Random</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RandomDemo1</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//使用random</span>
+        <span class="token comment">//1. 导包</span>
+        <span class="token comment">//2. 创建随机数</span>
+        <span class="token class-name">Random</span> r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3. 调用nextint()功能方法可以返回一个随机数值</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> date <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//0 ~ 9不包含10的</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Random生成区间随机数的技巧：减加法"><a href="#Random生成区间随机数的技巧：减加法" class="headerlink" title="Random生成区间随机数的技巧：减加法"></a>Random生成区间随机数的技巧：减加法</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1-10 ==> -1 ==> (0-9) +1</span>
+  <span class="token keyword">int</span> date <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">//3 - 17 ==> -3 ==> （0 - 14） + 3</span>
+  <span class="token keyword">int</span> date1 <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span> <span class="token operator">+</span><span class="token number">3</span> <span class="token punctuation">;</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="案例：猜数字游戏"><a href="#案例：猜数字游戏" class="headerlink" title="案例：猜数字游戏"></a>案例：猜数字游戏</h2><ul>
+<li>需求：随机生成一个1 - 100之间的数据，提示用户数据，猜大则提示过大，猜小则提示过小，知道猜中结果。</li>
+</ul>
+<p>分析：</p>
+<ol>
+<li>随机生成一个0-100的数</li>
+<li>使用死循环让用户猜测，猜大则提示过大，猜小则提示过小，猜中则结束游戏。<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>itheima<span class="token punctuation">.</span>random</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Random</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RandomText2</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Random</span> r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">;</span> <span class="token comment">//随机数区间为（0-99）+1 ===> (1-100)</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入你猜中的数字:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> a <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span> a <span class="token operator">&lt;</span> i<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"你猜的数字过小，"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span> a <span class="token operator">></span> i <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"你猜的数字过大，"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你猜的数字正确，游戏结束"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span><span class="token comment">//结束当前死循环</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E3%80%90%E6%A1%88%E4%BE%8B2-2%E3%80%91-%E5%B0%8F%E6%98%8E%E9%83%BD%E5%8F%AF%E4%BB%A5%E4%B9%B0%E4%BB%80%E4%B9%88.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/%E3%80%90%E6%A1%88%E4%BE%8B2-2%E3%80%91-%E5%B0%8F%E6%98%8E%E9%83%BD%E5%8F%AF%E4%BB%A5%E4%B9%B0%E4%BB%80%E4%B9%88.html" class="post-title-link" itemprop="url">【案例2-2】  小明都可以买什么</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-16 17:33:40 / Modified: 22:12:46" itemprop="dateCreated datePublished" datetime="2022-07-16T17:33:40+08:00">2022-07-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="【案例2-2】-小明都可以买什么"><a href="#【案例2-2】-小明都可以买什么" class="headerlink" title="【案例2-2】  小明都可以买什么"></a>【案例2-2】  小明都可以买什么</h1><h2 id="【案例介绍】"><a href="#【案例介绍】" class="headerlink" title="【案例介绍】"></a>【案例介绍】</h2><ol>
+<li>任务描述<br>编写一个智能购物计算小程序，在一家商店有书本、铅笔、橡皮、可乐、零食五种商品，商品价格如下表所示。<br>商品名称	价格<br>书本	12元<br>铅笔	1元<br>橡皮	2元<br>可乐	3元<br>零食	5元<br>假如你带了20元，且必须购买一本书，剩余的钱还可以购买哪种商品，可以购买几件，购买完后又能剩余多少钱？</li>
+<li>运行结果</li>
+</ol>
+<h2 id="【案例目标】"><a href="#【案例目标】" class="headerlink" title="【案例目标】"></a>【案例目标】</h2><ul>
+<li>学会分析”智能购物”程序的实现思路</li>
+<li>根据思路独立完成”智能购物”的源代码编写、编译及运行。</li>
+<li>掌握在程序中使用switch条件语句进行运算操作。</li>
+</ul>
+<h2 id="【案例思路】"><a href="#【案例思路】" class="headerlink" title="【案例思路】"></a>【案例思路】</h2><p>(1)	 从任务描述中可知，要实现此功能，我们需要先定义5种商品，定义五个int值作为这五种商品的价格。<br>(2)	从运行结果可知，我们需要先打印各个商品的价格以及带了多少钱，并选择需要购买商品的序列号。<br>(3)	选择到序列号后，我们需要使用switch条件语句进行判断用户要购买那件商品，并在switch条件语句中，计算可以购买多少其他商品和剩余多少钱。</p>
+<h2 id="【案例实现】"><a href="#【案例实现】" class="headerlink" title="【案例实现】"></a>【案例实现】</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">chapter0202</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Shopping</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+         <span class="token comment">/*
+ 6 			   * 假如你有20元，至少需要购买1本书，剩余的钱还可以购买那些东西。
+ 7 			   */</span>
+        <span class="token keyword">int</span> pencil <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment">//铅笔价格</span>
+        <span class="token keyword">int</span> rubber <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>   <span class="token comment">//橡皮价格</span>
+        <span class="token keyword">int</span> cola <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>     <span class="token comment">//可乐价格</span>
+        <span class="token keyword">int</span> book <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>    <span class="token comment">//书本价格</span>
+        <span class="token keyword">int</span> snacks <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>   <span class="token comment">//零食价格</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"书本的价格为"</span> <span class="token operator">+</span> book <span class="token operator">+</span> <span class="token string">"元，你总共有20元。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"1.铅笔的价格为"</span> <span class="token operator">+</span> pencil <span class="token operator">+</span> <span class="token string">"元。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"2.橡皮的价格为"</span> <span class="token operator">+</span> rubber <span class="token operator">+</span> <span class="token string">"元。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"3.可乐的价格为"</span> <span class="token operator">+</span> cola <span class="token operator">+</span> <span class="token string">"元。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"4.零食的价格为"</span> <span class="token operator">+</span> snacks <span class="token operator">+</span> <span class="token string">"元。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Scanner</span> sc1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你需要哪一个货物，请输入序列号："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> sc1<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+                <span class="token keyword">int</span> pencilmoney <span class="token operator">=</span> <span class="token number">20</span> <span class="token operator">-</span> book<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> pencilsum <span class="token operator">=</span> pencilmoney <span class="token operator">/</span> pencil<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> pencilsurplus <span class="token operator">=</span> pencilmoney <span class="token operator">%</span> pencil<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你好可以买"</span> <span class="token operator">+</span> pencilsum <span class="token operator">+</span> <span class="token string">"个铅笔。还剩"</span> <span class="token operator">+</span> pencilsurplus <span class="token operator">+</span> <span class="token string">"元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+                <span class="token keyword">int</span> rubbermoney <span class="token operator">=</span> <span class="token number">20</span> <span class="token operator">-</span> book<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> rubbersum <span class="token operator">=</span> rubbermoney <span class="token operator">/</span> rubber<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> rubbersurplus <span class="token operator">=</span> rubbermoney <span class="token operator">%</span> rubber<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你好可以买"</span> <span class="token operator">+</span> rubbersum <span class="token operator">+</span> <span class="token string">"个铅笔。还剩"</span> <span class="token operator">+</span> rubbersurplus <span class="token operator">+</span> <span class="token string">"元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+                <span class="token keyword">int</span> colamoney <span class="token operator">=</span> <span class="token number">20</span> <span class="token operator">-</span> book<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> colasum <span class="token operator">=</span> colamoney <span class="token operator">/</span> cola<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> colasurplus <span class="token operator">=</span> colamoney <span class="token operator">%</span> cola<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你好可以买"</span> <span class="token operator">+</span> colasum <span class="token operator">+</span> <span class="token string">"个可乐。还剩"</span> <span class="token operator">+</span> colasurplus <span class="token operator">+</span> <span class="token string">"元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span>
+                <span class="token keyword">int</span> snacksmoney <span class="token operator">=</span> <span class="token number">20</span> <span class="token operator">-</span> snacks<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> snacksum <span class="token operator">=</span> snacksmoney <span class="token operator">/</span> snacks<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> snacksurplus <span class="token operator">=</span> snacksmoney <span class="token operator">%</span> snacks<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你好可以买"</span> <span class="token operator">+</span> snacksum <span class="token operator">+</span> <span class="token string">"个零食。还剩"</span> <span class="token operator">+</span> snacksurplus <span class="token operator">+</span> <span class="token string">"元"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"输入错误"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第8 ~ 12行代码定义了5个商品的价格，第12 ~ 17行代码打印了商品的价格，第18 ~20 行代码是让用户输入需要购买的商品序号，第21 ~ 53行代码使用了switch条件选择判断用户购买的那中商品，再在switch中计算可以购买多少个以及剩余多少钱。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/Hexo%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%88%B0Github.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/Hexo%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0%E5%88%B0Github.html" class="post-title-link" itemprop="url">Hexo文章上传到Github</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-15 23:01:26" itemprop="dateCreated datePublished" datetime="2022-07-15T23:01:26+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-28 20:34:07" itemprop="dateModified" datetime="2022-07-28T20:34:07+08:00">2022-07-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="如何写文章"><a href="#如何写文章" class="headerlink" title="如何写文章"></a>如何写文章</h1><p>我使用vs code写博客文章<br>使用git命令<br><code>git n &quot;文章标题&quot;   </code><br>新建文章</p>
+<h1 id="文章如何上传？"><a href="#文章如何上传？" class="headerlink" title="文章如何上传？"></a>文章如何上传？</h1><p><code>hexo clean</code> 清除缓存文件 db.json 和已生成的静态文件 public 。<br><code>hexo generate</code> 生成网站静态文件到默认设置的 public 文件夹。<br><code>hexo deploy</code> 自动生成网站静态文件，并部署到设定的仓库。</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">hexo clean
+hexo generate
+hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h1><p><code>hexo s</code> 启动本地服务器，用于预览主题。默认地址： <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<p><code>hexo new page aboutme</code> 新建一个标题为 aboutme 的页面，默认链接地址为 主页地址&#x2F;aboutme&#x2F;</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1391,499 +1753,6 @@ public class SwitchDemo2 &#123;
         
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99.html" class="post-title-link" itemprop="url">MD语法规则</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-12 20:27:17" itemprop="dateCreated datePublished" datetime="2022-07-12T20:27:17+08:00">2022-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-13 17:14:40" itemprop="dateModified" datetime="2022-07-13T17:14:40+08:00">2022-07-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>#一、目录</p>
-<pre><code>@[TOC](文章标题名)
-一级目录 #+空格
-二级目录 ##+空格
-三级目录 ###+空格
-......
-</code></pre>
-<h2 id="标题Setext方式"><a href="#标题Setext方式" class="headerlink" title="标题Setext方式"></a>标题Setext方式</h2><p>三个或更多</p>
-<pre><code>大标题
-===
-小标题
----
-</code></pre>
-<h2 id="标题：Atx方式"><a href="#标题：Atx方式" class="headerlink" title="标题：Atx方式"></a>标题：Atx方式</h2><pre><code># 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
-</code></pre>
-<p>#二、段落缩进</p>
-<pre><code>半个字符大的空白&amp;ensp;或&amp;#8194;看，飞碟
-全字符大的空白&amp;emsp;或&amp;#8195;看，飞碟
-不断行的空白格&amp;nbsp;或&amp;#160;看，飞碟
-&amp;emsp;&amp;emsp;段落从此开始。
-</code></pre>
-<p>如下</p>
-<p>全字符大的空白&amp;emsp;或&amp;#8195;看，飞碟<br>半个字符大的空白&amp;ensp;或&amp;#8194;看，飞碟<br>不断行的空白格&amp;nbsp;或&amp;#160;看，飞碟<br>&amp;emsp;&amp;emsp;段落从此开始。<br>#三、格式<br>星号与下划线都可以，单是斜体，双是粗体，符号可跨行，符号可加空格</p>
-<p>1.字体、字号、颜色</p>
-<pre><code>斜体    _+内容+_
-
-粗体    __+内容+__
-
-粗斜体  ___+内容+___
-</code></pre>
-<p>斜体    <em>+斜体+</em></p>
-<p>粗体    <strong>+粗体+</strong></p>
-<p>粗斜体  <em><strong>+粗斜体+</strong></em></p>
-<pre><code>    &lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;
-    &lt;font face=&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;/font&gt;
-    &lt;font face=&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;/font&gt;
-    &lt;font color=#0099ff size=12 face=&quot;黑体&quot;&gt;黑体&lt;/font&gt;
-    &lt;font color=#00ffff size=3&gt;null&lt;/font&gt;
-    &lt;font color=gray size=5&gt;gray&lt;/font&gt;
-</code></pre>
-<p><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font><br><font color=#0099ff size=12 face="黑体">黑体</font><br><font color=#00ffff size=3>null</font><br><font color=gray size=5>gray</font></p>
-<h2 id="2-分割线"><a href="#2-分割线" class="headerlink" title="2.分割线"></a>2.分割线</h2><p>三个或更多-_*，必须单独一行，可含空格</p>
-<pre><code>        ---
-        ***
-        ___
-</code></pre>
-<hr>
-<hr>
-<hr>
-<h2 id="3-删除线"><a href="#3-删除线" class="headerlink" title="3.删除线"></a>3.删除线</h2><p>内容前后~~</p>
-<pre><code>~~我是删除线~~
-</code></pre>
-<p><del>我是删除线</del></p>
-<h2 id="4-下划线"><a href="#4-下划线" class="headerlink" title="4.下划线"></a>4.下划线</h2><pre><code>&lt;u&gt;我是下划线&lt;/u&gt;
-</code></pre>
-<p><u>我是下划线</u></p>
-<h2 id="5-脚注"><a href="#5-脚注" class="headerlink" title="5.脚注"></a>5.脚注</h2><pre><code>创建脚注[^脚注]
-[^脚注]:这里写脚注文本
-</code></pre>
-<p>创建脚注[^脚注]</p>
-<h1 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h1><h2 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1.无序列表"></a>1.无序列表</h2><pre><code>* 无序列表1
-* 无序列表2
-</code></pre>
-<ul>
-<li>无序列表1</li>
-<li>无序列表2</li>
-</ul>
-<h2 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2.有序列表"></a>2.有序列表</h2><pre><code>1. 第一项
-2. 第二项
-3. 第三项
-</code></pre>
-<ol start="4">
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-<h2 id="3-嵌套列表"><a href="#3-嵌套列表" class="headerlink" title="3.嵌套列表"></a>3.嵌套列表</h2><pre><code>    1.  第一项
-    *  第一项子项
-        * 第一项子项的子项
-</code></pre>
-<ol start="2">
-<li>第二项</li>
-</ol>
-<ul>
-<li>第二项子项<ul>
-<li>第二项子项的子项</li>
-</ul>
-</li>
-</ul>
-<h1 id="五、区块引用"><a href="#五、区块引用" class="headerlink" title="五、区块引用"></a>五、区块引用</h1><pre><code>&gt;引用
-&gt;&gt;引用的引用
-&gt;&gt;&gt;引用的引用的引用
-</code></pre>
-<blockquote>
-<p>引用</p>
-<blockquote>
-<p>引用的引用</p>
-<blockquote>
-<p>引用的引用的引用</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="六、代码"><a href="#六、代码" class="headerlink" title="六、代码"></a>六、代码</h1><h2 id="1-Tab键-代码"><a href="#1-Tab键-代码" class="headerlink" title="1.Tab键+代码"></a>1.Tab键+代码</h2><h2 id="2-反引号（-96-）包起来-x2F-三个反引号加语言名"><a href="#2-反引号（-96-）包起来-x2F-三个反引号加语言名" class="headerlink" title="2.反引号（&#96;）包起来&#x2F;三个反引号加语言名"></a>2.反引号（&#96;）包起来&#x2F;三个反引号加语言名</h2><p>行内代码</p>
-<p><code>val s = &quot;hello Markdown&quot;     println( s )</code></p>
-<p>三个反引号加语言名</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>段落代码<br>每行文字前加4个空格或者1个Tab</p>
-<pre><code>val s = &quot;hello Markdown&quot;
-println( s )
-val s = &quot;hello Markdown&quot;
-println( s )
-</code></pre>
-<h1 id="七、链接"><a href="#七、链接" class="headerlink" title="七、链接"></a>七、链接</h1><h2 id="1-文字超链：Inline方式"><a href="#1-文字超链：Inline方式" class="headerlink" title="1.文字超链：Inline方式"></a>1.文字超链：Inline方式</h2><pre><code>[文字](链接地址 &quot;提示内容&quot;)
-如：
-[A-Itfuture](https://blog.csdn.net/weixin_43431218?spm=1011.2124.3001.5343 &quot;A-itfuture的博客&quot;)
-</code></pre>
-<p><a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="提示内容">文字</a><br>如：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43431218?spm=1011.2124.3001.5343" title="A-itfuture的博客">A-Itfuture</a></p>
-<pre><code>例子：[中括号](小括号)
-</code></pre>
-<p>例子：<a href="%E5%B0%8F%E6%8B%AC%E5%8F%B7">中括号</a></p>
-<h2 id="2-高级链接-索引超链：Reference方式"><a href="#2-高级链接-索引超链：Reference方式" class="headerlink" title="2.高级链接- 索引超链：Reference方式"></a>2.高级链接- 索引超链：Reference方式</h2><p>设置变量</p>
-<pre><code>这是 [百度][1]的地址
-此处空行
-[1]:http://www.baidu.com
-</code></pre>
-<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度</a></p>
-<h2 id="3-图片超链"><a href="#3-图片超链" class="headerlink" title="3.图片超链"></a>3.图片超链</h2><pre><code>![风景图](https://cn.bing.com/images/search?view=detailV2&amp;ccid=A6TpC4oo&amp;  
-id=18E0F0DCC4093907CF8FCA6D75617F54A0D)
-</code></pre>
-<p><img data-src="https://i0.hdslb.com/bfs/new_dyn/2f428032e74925845e081f840246fead401742377.png%401295w.webp" alt="图片"></p>
-<h2 id="4-自动链接"><a href="#4-自动链接" class="headerlink" title="4.自动链接"></a>4.自动链接</h2><p>尖括号</p>
-<pre><code>&lt;http://www.baidu.com&gt;
-</code></pre>
-<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a></p>
-<h1 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h1><p>| 分隔单元格 - - -分隔表头和其他行<br>对齐方式<br>  -：右对齐<br>  :-左对齐<br>  :—: 居中</p>
-<pre><code>    | 表头一 | 表头二 | 表头三 |
-    | :--- | :---: | ---: |
-    | 1号|2号|3号|
-    | 1号|2号|3号|
-</code></pre>
-<table>
-<thead>
-<tr>
-<th align="left">表头一</th>
-<th align="center">表头二</th>
-<th align="right">表头三</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1月</td>
-<td align="center">2号</td>
-<td align="right">3号</td>
-</tr>
-<tr>
-<td align="left">1月</td>
-<td align="center">4号</td>
-<td align="right">6号</td>
-</tr>
-</tbody></table>
-<p>或者</p>
-<pre><code>    项目     | 价格
-    -------- | ---
-    Computer | $1600
-    Phone    | $12
-    Pipe     | $1
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>价格</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Computer</td>
-<td>$1600</td>
-</tr>
-<tr>
-<td>Phone</td>
-<td>$12</td>
-</tr>
-<tr>
-<td>Pipe</td>
-<td>$1</td>
-</tr>
-</tbody></table>
-<h1 id="九、其他"><a href="#九、其他" class="headerlink" title="九、其他"></a>九、其他</h1><h2 id="1-注释"><a href="#1-注释" class="headerlink" title="1.注释"></a>1.注释</h2><p>html的注释</p>
-<pre><code>&lt;!-- 注释 --&gt;
-</code></pre>
-<!-- 注释 -->
-
-<p>2.转义字符<br>用html的转义字符</p>
-<p>Markdown中的转义字符为\，转义的有</p>
-<pre><code>    \\ 反斜杠
-
-    \` 反引号
-
-    \* 星号
-
-    \_ 下划线
-
-    \&#123;\&#125; 大括号
-
-    \[\] 中括号
-
-    \(\) 小括号
-
-    \# 井号
-
-    \+ 加号
-
-    \- 减号
-
-    \. 英文句号
-
-    \! 感叹号
-</code></pre>
-<p>\ 反斜杠</p>
-<p>` 反引号</p>
-<p>* 星号</p>
-<p>_ 下划线</p>
-<p>{} 大括号</p>
-<p>[] 中括号</p>
-<p>() 小括号</p>
-<p># 井号</p>
-<p>+ 加号</p>
-<p>- 减号</p>
-<p>. 英文句号</p>
-<p>! 感叹号</p>
-<h1 id="初级语法到此结束"><a href="#初级语法到此结束" class="headerlink" title="初级语法到此结束!"></a>初级语法到此结束!</h1>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" class="post-title-link" itemprop="url">基本数据类型</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-12 20:23:58" itemprop="dateCreated datePublished" datetime="2022-07-12T20:23:58+08:00">2022-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-14 18:37:39" itemprop="dateModified" datetime="2022-07-14T18:37:39+08:00">2022-07-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <table>
-<thead>
-<tr>
-<th align="left">数据类型</th>
-<th align="center">关键字</th>
-<th align="center">取值范围</th>
-<th align="center">内存占用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">整数</td>
-<td align="center">int</td>
-<td align="center">-2的32次方~2的32次方-1</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left">浮点数</td>
-<td align="center">double</td>
-<td align="center">4.9000000e-324 到3.402823+38</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="left">字符</td>
-<td align="center">char</td>
-<td align="center">0~65535 也就是2的16次方-1</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="left">布尔</td>
-<td align="center">boolean</td>
-<td align="center">true flase</td>
-<td align="center">1</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0.html" class="post-title-link" itemprop="url">第一篇文章</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-12 18:29:27" itemprop="dateCreated datePublished" datetime="2022-07-12T18:29:27+08:00">2022-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-17 17:32:12" itemprop="dateModified" datetime="2022-07-17T17:32:12+08:00">2022-07-17</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Java学习开始"><a href="#Java学习开始" class="headerlink" title="Java学习开始"></a>Java学习开始</h1>
       
     </div>
 
