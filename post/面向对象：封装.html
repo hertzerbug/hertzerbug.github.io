@@ -21,30 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":"ture","pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="方法的内存原理方法的调用流程 - 内存图解 方法没有被调用的时候，在方法区中的字节码文件中存放 方法被调用的时候，需要进入到栈内存中运行  示例： package demo;  public class Text4 &amp;#123;     public static void main(String[] args) &amp;#123;         &#x2F;&#x2F;理解方法的内存机制         study()">
+    <meta name="description" content="面向对象：封装封装思想概述 封装 面向对象的三大特征：封装、继承、多态。 封装：告诉我们，如何正确设计对象的属性和方法。 封装的原则：对象代表什么，就得封装对应的数据，并提供数据对应的行为。   需求： 请设计一个人对象，且要求这个对象有名称有年龄，能吃饭、睡觉。 public class People&amp;#123;     名称;     年龄;     吃饭;     睡觉; &amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="方法的内存原理">
-<meta property="og:url" content="http://example.com/post/%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86.html">
+<meta property="og:title" content="面向对象：封装">
+<meta property="og:url" content="http://example.com/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%B0%81%E8%A3%85.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="方法的内存原理方法的调用流程 - 内存图解 方法没有被调用的时候，在方法区中的字节码文件中存放 方法被调用的时候，需要进入到栈内存中运行  示例： package demo;  public class Text4 &amp;#123;     public static void main(String[] args) &amp;#123;         &#x2F;&#x2F;理解方法的内存机制         study()">
+<meta property="og:description" content="面向对象：封装封装思想概述 封装 面向对象的三大特征：封装、继承、多态。 封装：告诉我们，如何正确设计对象的属性和方法。 封装的原则：对象代表什么，就得封装对应的数据，并提供数据对应的行为。   需求： 请设计一个人对象，且要求这个对象有名称有年龄，能吃饭、睡觉。 public class People&amp;#123;     名称;     年龄;     吃饭;     睡觉; &amp;#125;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/photo/%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3.png">
-<meta property="article:published_time" content="2022-07-22T08:24:14.000Z">
-<meta property="article:modified_time" content="2022-07-22T08:56:05.297Z">
+<meta property="article:published_time" content="2022-07-27T09:25:25.000Z">
+<meta property="article:modified_time" content="2022-07-27T16:23:59.299Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Java入门">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/photo/%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3.png">
 
 
-<link rel="canonical" href="http://example.com/post/%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86.html">
+<link rel="canonical" href="http://example.com/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%B0%81%E8%A3%85.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/post/%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86.html","path":"/post/方法的内存原理.html","title":"方法的内存原理"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%B0%81%E8%A3%85.html","path":"/post/面向对象：封装.html","title":"面向对象：封装"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>方法的内存原理 | Hexo</title>
+<title>面向对象：封装 | Hexo</title>
   
 
 
@@ -146,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">方法的内存原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B-%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">方法的调用流程 - 内存图解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%B0%81%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">面向对象：封装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E6%80%9D%E6%83%B3%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">封装思想概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">如何更好的封装</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -205,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86.html">
+    <link itemprop="mainEntityOfPage" href="http://example.com/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E5%B0%81%E8%A3%85.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -218,12 +216,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="方法的内存原理 | Hexo">
+      <meta itemprop="name" content="面向对象：封装 | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          方法的内存原理
+          面向对象：封装
         </h1>
 
         <div class="post-meta-container">
@@ -233,9 +231,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-07-22 16:24:14 / Modified: 16:56:05" itemprop="dateCreated datePublished" datetime="2022-07-22T16:24:14+08:00">2022-07-22</time>
+      <time title="Created: 2022-07-27 17:25:25" itemprop="dateCreated datePublished" datetime="2022-07-27T17:25:25+08:00">2022-07-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-28 00:23:59" itemprop="dateModified" datetime="2022-07-28T00:23:59+08:00">2022-07-28</time>
     </span>
 
   
@@ -255,34 +259,82 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="方法的内存原理"><a href="#方法的内存原理" class="headerlink" title="方法的内存原理"></a>方法的内存原理</h1><h2 id="方法的调用流程-内存图解"><a href="#方法的调用流程-内存图解" class="headerlink" title="方法的调用流程 - 内存图解"></a>方法的调用流程 - 内存图解</h2><ul>
-<li>方法没有被调用的时候，在方法区中的字节码文件中存放</li>
-<li>方法被调用的时候，需要进入到栈内存中运行</li>
+        <h1 id="面向对象：封装"><a href="#面向对象：封装" class="headerlink" title="面向对象：封装"></a>面向对象：封装</h1><h2 id="封装思想概述"><a href="#封装思想概述" class="headerlink" title="封装思想概述"></a>封装思想概述</h2><ol>
+<li>封装<ul>
+<li>面向对象的三大特征：封装、继承、多态。</li>
+<li>封装：告诉我们，如何正确设计对象的属性和方法。</li>
+<li>封装的原则：对象代表什么，就得封装对应的数据，并提供数据对应的行为。</li>
 </ul>
-<p>示例：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">demo</span><span class="token punctuation">;</span>
+</li>
+<li>需求：<ul>
+<li>请设计一个人对象，且要求这个对象有名称有年龄，能吃饭、睡觉。 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">&#123;</span>
+    名称<span class="token punctuation">;</span>
+    年龄<span class="token punctuation">;</span>
+    吃饭<span class="token punctuation">;</span>
+    睡觉<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li>示例<br>人画圆<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//人对象</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">&#123;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//圆对象</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Circle</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">double</span> randius<span class="token punctuation">;</span><span class="token comment">//半径</span>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Text4</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//画对象</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>总结<br> （1）什么是封装？<ul>
+<li>告诉我们，如何正确设计对象的属性和方法。</li>
+<li>原则：对象代表什么，就得封装对应的数据，并提供数据对应的行为。<br> （2）理解封装思想有什么好处？</li>
+<li>让编程变得很简单，有什么事，找对象，调方法就行</li>
+<li>降低学习成本，有需要找API</li>
+</ul>
+</li>
+</ol>
+<h2 id="如何更好的封装"><a href="#如何更好的封装" class="headerlink" title="如何更好的封装"></a>如何更好的封装</h2><ul>
+<li>一般建议对成员变量使用private（私有、隐藏)关键字修饰进（private修饰的成员只能在当前类中访问）。、</li>
+<li>为每个成员提供配套的public修饰的getter、setter方法暴露其取值和赋值。</li>
+</ul>
+<ol>
+<li>示例：<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">encapsulation</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 目标：学习如何更好的进行封装。
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Text2</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//理解方法的内存机制</span>
-        <span class="token function">study</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Student</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"吃饭"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">encapsulation</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//1.成员变量 使用private修饰，只能在本类中访问了</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * 提供全套的getter和setter方法暴露其取值和赋值
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> age <span class="token operator">&lt;=</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你的年龄有问题！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"睡觉"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> age<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">study</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学习"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img data-src="/photo/%E6%96%B9%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3.png" alt="方法的内存图解"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li>方法的运行区域<ul>
-<li>栈内存</li>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>总结<br> （1）如何进行更好的封装？<ul>
+<li>一般会把成员变量使用private隐藏起来，对外就不能直接访问了。</li>
+<li>使用public修饰的getter和setter方法暴露取值和赋值。</li>
 </ul>
 </li>
 </ol>
@@ -302,13 +354,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/post/%E6%96%B9%E6%B3%95%E6%A1%88%E4%BE%8B.html" rel="prev" title="方法案例">
-                  <i class="fa fa-chevron-left"></i> 方法案例
+                <a href="/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9Athis%E5%85%B3%E9%94%AE%E5%AD%97.html" rel="prev" title="面向对象：this关键字">
+                  <i class="fa fa-chevron-left"></i> 面向对象：this关键字
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/%E6%96%B9%E6%B3%95%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92.html" rel="next" title="方法的参数传递">
-                  方法的参数传递 <i class="fa fa-chevron-right"></i>
+                <a href="/post/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9AJavabeen%E3%80%81%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B.html" rel="next" title="面向对象：Javabeen、综合案例">
+                  面向对象：Javabeen、综合案例 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
